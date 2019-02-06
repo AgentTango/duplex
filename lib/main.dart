@@ -28,26 +28,27 @@ class MyHomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            IconButton(
-              icon: Icon(
+            RawMaterialButton(
+              onPressed: () {Navigator.of(context).pushNamed("/remote_page");},
+              child: Icon(
                 Icons.airplay,
                 size: 40.0,
                 color: Colors.blueAccent,
               ),
-              onPressed: () {
-                Navigator.of(context).pushNamed("/remote_page");
-              },
+              shape: CircleBorder(),
             ),
-            IconButton(
-              icon: Icon(
+
+            RawMaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("/video_page");
+              },
+              child: Icon(
                 Icons.live_tv,
                 size: 40.0,
                 color: Colors.red,
               ),
-              onPressed: () {
-                Navigator.of(context).pushNamed("/video_page");
-              },
-            )
+              shape: CircleBorder(side: BorderSide(style: BorderStyle.none)),
+            ),
           ],
         ),
       ),

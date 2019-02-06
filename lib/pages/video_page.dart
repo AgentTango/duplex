@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPage extends StatefulWidget {
-  VideoPage({this.title = 'Chewie Demo'});
+  VideoPage({this.title = 'Duplex App'});
 
   final String title;
 
@@ -64,9 +64,6 @@ class _VideoPageState extends State<VideoPage> {
         platform: _platform ?? Theme.of(context).platform,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
         body: Column(
           children: <Widget>[
             Expanded(
