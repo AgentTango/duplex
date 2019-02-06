@@ -5,7 +5,19 @@ class RemotePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Remote Page"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Icon(
+              Icons.play_circle_outline,
+              color: Colors.greenAccent,
+            ),
+            Icon(
+              Icons.pause_circle_outline,
+              color: Colors.red,
+            ),
+          ],
+        ),
       ),
     );
   }
