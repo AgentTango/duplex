@@ -21,9 +21,10 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            IconButton(icon: Icon(Icons.settings_remote),iconSize: 20.0, onPressed: () {}),
-            IconButton(icon: Icon(Icons.live_tv),iconSize: 20.0, onPressed: () {})
+            IconButton(icon: Icon(Icons.airplay,size: 40.0,), onPressed: () {}),
+            IconButton(icon: Icon(Icons.live_tv,size: 40.0,), onPressed: () {})
           ],
         ),
       ),
