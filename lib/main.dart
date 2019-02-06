@@ -32,15 +32,21 @@ class MyHomePage extends StatelessWidget {
               icon: Icon(
                 Icons.airplay,
                 size: 40.0,
+                color: Colors.blueAccent,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed("/remote_page");
+              },
             ),
             IconButton(
               icon: Icon(
                 Icons.live_tv,
                 size: 40.0,
+                color: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed("/video_page");
+              },
             )
           ],
         ),
