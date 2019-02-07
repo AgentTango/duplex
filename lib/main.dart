@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:duplex/pages/video_page.dart';
-import 'package:duplex/pages/remote_page.dart';
+//import 'package:duplex/pages/remote_page.dart';
 import 'package:duplex/pages/video_page.dart';
+import 'package:duplex/pages/newRemotePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Duplex",
-      home: RemotePage(),
+      home: MyHomePage(),
       routes: <String, WidgetBuilder>{
         '/video_page': (BuildContext context) => VideoPage(),
         '/remote_page': (BuildContext context) => RemotePage()

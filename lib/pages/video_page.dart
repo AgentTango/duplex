@@ -33,8 +33,7 @@ class _VideoPageState extends State<VideoPage> {
       autoPlay: true,
       looping: true,
       // Try playing around with some of these other options:
-
-      // showControls: false,
+       showControls: false,
       // materialProgressColors: ChewieProgressColors(
       //   playedColor: Colors.red,
       //   handleColor: Colors.blue,
