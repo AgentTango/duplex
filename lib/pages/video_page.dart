@@ -20,6 +20,17 @@ class _VideoPageState extends State<VideoPage> {
   VideoPlayerController _videoPlayerController2;
   ChewieController videoController;
 
+  // materialProgressColors: ChewieProgressColors(
+  //   playedColor: Colors.red,
+  //   handleColor: Colors.blue,
+  //   backgroundColor: Colors.grey,
+  //   bufferedColor: Colors.lightGreen,
+  // ),
+  // placeholder: Container(
+  //   color: Colors.grey,
+  // ),
+  // autoInitialize: true,
+
   @override
   void initState() {
     super.initState();
@@ -33,17 +44,9 @@ class _VideoPageState extends State<VideoPage> {
       autoPlay: true,
       looping: true,
       // Try playing around with some of these other options:
-       showControls: false,
-      // materialProgressColors: ChewieProgressColors(
-      //   playedColor: Colors.red,
-      //   handleColor: Colors.blue,
-      //   backgroundColor: Colors.grey,
-      //   bufferedColor: Colors.lightGreen,
-      // ),
-      // placeholder: Container(
-      //   color: Colors.grey,
-      // ),
-      // autoInitialize: true,
+      showControls: true,
+      fullScreenByDefault: true,
+
     );
   }
 
@@ -72,12 +75,12 @@ class _VideoPageState extends State<VideoPage> {
                 ),
               ),
             ),
-            FlatButton(
-              onPressed: () {
-                videoController.enterFullScreen();
-              },
-              child: Text('Fullscreen'),
-            ),
+//            FlatButton(
+//              onPressed: () {
+//                videoController.enterFullScreen();
+//              },
+//              child: Text('Fullscreen'),
+//            ),
             Row(
               children: <Widget>[
                 Expanded(
@@ -92,6 +95,7 @@ class _VideoPageState extends State<VideoPage> {
                           aspectRatio: 3 / 2,
                           autoPlay: true,
                           looping: true,
+                          fullScreenByDefault: true
                         );
                       });
                     },
@@ -124,36 +128,6 @@ class _VideoPageState extends State<VideoPage> {
                 )
               ],
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        _platform = TargetPlatform.android;
-                      });
-                    },
-                    child: Padding(
-                      child: Text("Android"),
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        _platform = TargetPlatform.iOS;
-                      });
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("iOS"),
-                    ),
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),
