@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   chewie: ^0.9.3
   firebase_core: 0.3.0+1
+  cloud_firestore: ^0.9.0+1
 
 dev_dependencies:
   flutter_test:

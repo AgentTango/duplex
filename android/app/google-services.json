@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "1052142303295",
-    "firebase_url": "https://duplex-1e769.firebaseio.com",
-    "project_id": "duplex-1e769",
-    "storage_bucket": "duplex-1e769.appspot.com"
+    "project_number": "256492307464",
+    "firebase_url": "https://duplex-84193.firebaseio.com",
+    "project_id": "duplex-84193",
+    "storage_bucket": "duplex-84193.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1052142303295:android:fda1a9ae268f4014",
+        "mobilesdk_app_id": "1:256492307464:android:fda1a9ae268f4014",
         "android_client_info": {
           "package_name": "com.tango.duplex"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1052142303295-blftkmhn66dior1o7ulke2nk54d3qlpt.apps.googleusercontent.com",
+          "client_id": "256492307464-6ibqukgi35nah14c0iek57letlm89clf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD-RktXlADyZpcalxfgKebGsGn8g5b56OY"
+          "current_key": "AIzaSyCqJ3HSzi5rCDHAYiWeVI43jbC14zetM1g"
         }
       ],
       "services": {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:duplex/pages/video_page.dart';
-//import 'package:duplex/pages/remote_page.dart';
-import 'package:duplex/pages/video_page.dart';
-import 'package:duplex/pages/newRemotePage.dart';
+import 'package:duplex/pages/new_remote_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: <String, WidgetBuilder>{
         '/video_page': (BuildContext context) => VideoPage(),
-        '/remote_page': (BuildContext context) => RemotePage()
+        '/remote_page': (BuildContext context) => RemoteControlPage(),
       },
     );
   }
@@ -31,7 +31,9 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RawMaterialButton(
-              onPressed: () {Navigator.of(context).pushNamed("/remote_page");},
+              onPressed: () {
+                Navigator.of(context).pushNamed("/remote_page");
+              },
               child: Icon(
                 Icons.airplay,
                 size: 40.0,
@@ -39,7 +41,6 @@ class MyHomePage extends StatelessWidget {
               ),
               shape: CircleBorder(),
             ),
-
             RawMaterialButton(
               onPressed: () {
                 Navigator.of(context).pushNamed("/video_page");
