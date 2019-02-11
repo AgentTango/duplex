@@ -48,7 +48,6 @@ class _VideoPageState extends State<VideoPage> {
       // Try playing around with some of these other options:
       showControls: true,
       fullScreenByDefault: true,
-
     );
   }
 
@@ -71,11 +70,26 @@ class _VideoPageState extends State<VideoPage> {
         body: Column(
           children: <Widget>[
             Expanded(
-              child: Center(
-                child: Chewie(
-                  controller: videoController,
-                ),
-              ),
+              child: StreamBuilder<Object>(
+                  stream: null,
+                  builder: (context, snapshot) {
+                    Firestore.instance
+                        .collection('controls')
+                        .document('document_id')
+                        .get()
+                        .then((v) {
+                      bool ip = v.data['play'];
+                      if (ip) {
+                        videoController.play();
+                      } else
+                        videoController.pause();
+                    });
+                    return Center(
+                      child: Chewie(
+                        controller: videoController,
+                      ),
+                    );
+                  }),
             ),
 //            FlatButton(
 //              onPressed: () {
