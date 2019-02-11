@@ -81,53 +81,53 @@ class _VideoPageState extends State<VideoPage> {
 //              },
 //              child: Text('Fullscreen'),
 //            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        videoController.dispose();
-                        _videoPlayerController2.pause();
-                        _videoPlayerController2.seekTo(Duration(seconds: 0));
-                        videoController = ChewieController(
-                          videoPlayerController: _videoPlayerController1,
-                          aspectRatio: 3 / 2,
-                          autoPlay: true,
-                          looping: true,
-                          fullScreenByDefault: true
-                        );
-                      });
-                    },
-                    child: Padding(
-                      child: Text("Video 1"),
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        videoController.dispose();
-                        _videoPlayerController1.pause();
-                        _videoPlayerController1.seekTo(Duration(seconds: 0));
-                        videoController = ChewieController(
-                          videoPlayerController: _videoPlayerController2,
-                          aspectRatio: 3 / 2,
-                          autoPlay: true,
-                          looping: true,
-                        );
-                      });
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("Video 2"),
-                    ),
-                  ),
-                )
-              ],
-            ),
+//            Row(
+//              children: <Widget>[
+//                Expanded(
+//                  child: FlatButton(
+//                    onPressed: () {
+//                      setState(() {
+//                        videoController.dispose();
+//                        _videoPlayerController2.pause();
+//                        _videoPlayerController2.seekTo(Duration(seconds: 0));
+//                        videoController = ChewieController(
+//                          videoPlayerController: _videoPlayerController1,
+//                          aspectRatio: 3 / 2,
+//                          autoPlay: true,
+//                          looping: true,
+//                          fullScreenByDefault: true
+//                        );
+//                      });
+//                    },
+//                    child: Padding(
+//                      child: Text("Video 1"),
+//                      padding: EdgeInsets.symmetric(vertical: 16.0),
+//                    ),
+//                  ),
+//                ),
+//                Expanded(
+//                  child: FlatButton(
+//                    onPressed: () {
+//                      setState(() {
+//                        videoController.dispose();
+//                        _videoPlayerController1.pause();
+//                        _videoPlayerController1.seekTo(Duration(seconds: 0));
+//                        videoController = ChewieController(
+//                          videoPlayerController: _videoPlayerController2,
+//                          aspectRatio: 3 / 2,
+//                          autoPlay: true,
+//                          looping: true,
+//                        );
+//                      });
+//                    },
+//                    child: Padding(
+//                      padding: EdgeInsets.symmetric(vertical: 16.0),
+//                      child: Text("Video 2"),
+//                    ),
+//                  ),
+//                )
+//              ],
+//            ),
           ],
         ),
       ),

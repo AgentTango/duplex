@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1052142303295",
+    "firebase_url": "https://duplex-1e769.firebaseio.com",
+    "project_id": "duplex-1e769",
+    "storage_bucket": "duplex-1e769.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052142303295:android:fda1a9ae268f4014",
+        "android_client_info": {
+          "package_name": "com.tango.duplex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052142303295-blftkmhn66dior1o7ulke2nk54d3qlpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-RktXlADyZpcalxfgKebGsGn8g5b56OY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
