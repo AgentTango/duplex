@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
 import 'package:duplex/pages/video_page.dart';
 import 'package:duplex/pages/new_remote_page.dart';
 

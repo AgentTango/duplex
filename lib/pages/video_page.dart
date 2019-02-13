@@ -33,6 +33,17 @@ class _VideoPageState extends State<VideoPage> {
       showControls: false,
       fullScreenByDefault: true,
     );
+
+    CollectionReference reference = Firestore.instance.collection('controls');
+    reference.snapshots().listen((querySnapshots){
+      querySnapshots.documentChanges.forEach((changes){
+        if(changes.type == DocumentChangeType.modified){
+          print(changes.document.data['play']);
+        }
+        else
+          print(changes);
+      });
+    });
   }
 
   @override
