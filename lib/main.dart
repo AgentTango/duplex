@@ -1,4 +1,4 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:duplex/pages/video_page.dart';
 import 'package:duplex/pages/remote_page.dart';
 
@@ -56,3 +56,5 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+/// Made with Love by Aditya Thakur and Rishi Banerjee
