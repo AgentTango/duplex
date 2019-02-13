@@ -2,8 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class RemoteControlPage extends StatelessWidget {
+class RemoteControlPage extends StatefulWidget {
+  @override
+  _RemoteControlPageState createState() {
+    return _RemoteControlPageState();
+  }
+}
+
+class _RemoteControlPageState extends State<RemoteControlPage> {
   List<DocumentSnapshot> documents;
+
+  bool _videoState = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,22 +46,36 @@ class RemoteControlPage extends StatelessWidget {
                   RawMaterialButton(
                     onPressed: () {
                       /// Play Button
-                      Firestore.instance.collection('controls').document('document_id').get().then((v){
+                      Firestore.instance
+                          .collection('controls')
+                          .document('document_id')
+                          .get()
+                          .then((v) {
                         bool ip = v.data['play'];
+                        _videoState = ip;
+                        print(_videoState);
                         Firestore.instance
                             .collection('controls')
                             .document('document_id')
                             .updateData({'play': !ip});
+                        setState(() {
+                          _videoState = ip;
+                        });
                       });
-
                     },
                     fillColor: Colors.indigoAccent,
                     splashColor: Colors.indigoAccent[700],
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 80.0,
-                    ),
+                    child: _videoState
+                        ? Icon(
+                            Icons.play_arrow,
+                            color: Colors.white,
+                            size: 80.0,
+                          )
+                        : Icon(
+                            Icons.pause,
+                            color: Colors.white,
+                            size: 80.0,
+                          ),
                     shape: CircleBorder(),
                   ),
                 ],
