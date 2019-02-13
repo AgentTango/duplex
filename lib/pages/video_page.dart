@@ -28,20 +28,22 @@ class _VideoPageState extends State<VideoPage> {
     videoController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
-      autoPlay: false,
+      autoPlay: true,
       // Try playing around with some of these other options:
       showControls: false,
       fullScreenByDefault: true,
+      looping: true,
     );
 
     CollectionReference reference = Firestore.instance.collection('controls');
-    reference.snapshots().listen((querySnapshots){
-      querySnapshots.documentChanges.forEach((changes){
-        if(changes.type == DocumentChangeType.modified){
-          print(changes.document.data['play']);
-        }
+    reference.snapshots().listen((querySnapshots) {
+      querySnapshots.documentChanges.forEach((changes) {
+        var playingState = changes.document.data['play'];
+        print(playingState);
+        if (playingState)
+          videoController.play();
         else
-          print(changes);
+          videoController.pause();
       });
     });
   }
@@ -64,26 +66,11 @@ class _VideoPageState extends State<VideoPage> {
         body: Column(
           children: <Widget>[
             Expanded(
-              child: StreamBuilder<Object>(
-                  stream: null,
-                  builder: (context, snapshot) {
-                    Firestore.instance
-                        .collection('controls')
-                        .document('document_id')
-                        .get()
-                        .then((v) {
-                      bool ip = v.data['play'];
-                      if (ip) {
-                        videoController.play();
-                      } else
-                        videoController.pause();
-                    });
-                    return Center(
-                      child: Chewie(
-                        controller: videoController,
-                      ),
-                    );
-                  }),
+              child: Center(
+                child: Chewie(
+                  controller: videoController,
+                ),
+              ),
             ),
           ],
         ),
