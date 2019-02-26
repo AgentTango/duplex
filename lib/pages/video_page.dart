@@ -24,7 +24,7 @@ class _VideoPageState extends State<VideoPage> {
   void initState() {
     super.initState();
     _videoPlayerController1 = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+        'gs://duplex-84193.appspot.com/testing_video_flutter.mp4');
     videoController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
