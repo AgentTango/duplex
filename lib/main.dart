@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             RawMaterialButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("/browser_page");
+                Navigator.of(context).pushNamed("/remote_page");
               },
               child: Icon(
                 Icons.airplay,
