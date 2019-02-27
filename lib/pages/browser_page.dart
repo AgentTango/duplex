@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BrowserPage extends StatelessWidget {
   @override
@@ -29,27 +30,35 @@ class VideoList extends StatefulWidget {
 
 class _VideoListState extends State<VideoList> {
 
-  List<String> titles = ['My Hero', 'Arrows', 'I\'ll Stick Around'];
+
+
+  List<String> titles = ['Howdy Demo', 'Song Video', 'Another Video'];
   String subtitle = "Howdy Buddy";
+
+  static String firstVideoUrl = "https://firebasestorage.googleapis.com/v0/b/duplex-84193.appspot.com/o/howdy_demo.mp4?alt=media&token=7365edda-1b6a-42bc-aaef-676c80cdcd30";
+  static String secondVideoUrl = "https://firebasestorage.googleapis.com/v0/b/duplex-84193.appspot.com/o/testing_video_flutter.mp4?alt=media&token=37801d74-9700-4ca9-8a59-3099bd5151b3";
+  static String thirdVideoUrl = "https://firebasestorage.googleapis.com/v0/b/duplex-84193.appspot.com/o/testing_video_flutter.mp4?alt=media&token=37801d74-9700-4ca9-8a59-3099bd5151b3";
+  List<String> videoUrls = [firstVideoUrl, secondVideoUrl, thirdVideoUrl];
+
 
   @override
   Widget build(BuildContext context) {
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
-        return videoListItem(titles[index], subtitle);
+        return videoListItem(titles[index], subtitle, videoUrls[index]);
       },
       itemCount: titles.length,
 
     );
   }
 
-  Widget videoListItem(String title, String subtitle) {
+  Widget videoListItem(String title, String subtitle, String videoUrl) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
         onTap: (){
-          Navigator.of(context).pushNamed("/video_page");
+          Navigator.of(context).pushNamed("/remote_page");
         },
         title: Text(title),
         subtitle: Text(subtitle),
