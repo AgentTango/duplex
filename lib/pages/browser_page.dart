@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 class BrowserPage extends StatelessWidget {
   @override
@@ -58,6 +59,10 @@ class _VideoListState extends State<VideoList> {
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
         onTap: (){
+          Firestore.instance.collection('controls').document('document_id').setData({
+            "video_url": videoUrl,
+            "play": true
+          });
           Navigator.of(context).pushNamed("/remote_page");
         },
         title: Text(title),
