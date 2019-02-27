@@ -19,12 +19,12 @@ class _VideoPageState extends State<VideoPage> {
   TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
   ChewieController videoController;
+  String videoUrl = 'https://firebasestorage.googleapis.com/v0/b/duplex-84193.appspot.com/o/testing_video_flutter.mp4?alt=media&token=37801d74-9700-4ca9-8a59-3099bd5151b3';
 
   @override
   void initState() {
     super.initState();
-    _videoPlayerController1 = VideoPlayerController.network(
-        'gs://duplex-84193.appspot.com/testing_video_flutter.mp4');
+    _videoPlayerController1 = VideoPlayerController.network(videoUrl);
     videoController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
