@@ -26,6 +26,12 @@ class _VideoPageState extends State<VideoPage> {
   // String videoUrl = 'https://firebasestorage.googleapis.com/v0/b/duplex-84193.appspot.com/o/testing_video_flutter.mp4?alt=media&token=37801d74-9700-4ca9-8a59-3099bd5151b3';
 
   @override
+  void setState(fn) {
+    // Another Trial for Video State URL
+    super.setState(fn);
+  }
+
+  @override
   void initState() {
     super.initState();
     Firestore.instance.collection("controls").document("document_id")
@@ -34,7 +40,11 @@ class _VideoPageState extends State<VideoPage> {
       widget.videoUrl = ds.data['videoUrl'].toString();
       print(widget.videoUrl);
       if (!mounted) return;
-      setState((){});
+      setState((){
+        print("###### Changing Video URL #######");
+        widget.videoUrl = ds.data['videoUrl'].String();
+        print(widget.videoUrl);
+      });
     });
 
     _videoPlayerController1 = VideoPlayerController.network(widget.videoUrl);
